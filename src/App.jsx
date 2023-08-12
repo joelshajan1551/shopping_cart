@@ -1,7 +1,7 @@
 import './App.css'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import { Navbar } from "./components/navbar";
-import { shop } from './pages/shopping/shop'
+import { Shop } from './pages/shopping/Shop'
 import { cart } from './pages/cart/cart'
 
 function App() {
@@ -10,8 +10,9 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<shop/>} />
-        <Route path="/cart" element={<cart/>} />
+        <Route path="/" element={<Shop />} />
+        <Route path="/cart" element={<cart />} />
+
       </Routes>
     </Router>
 
