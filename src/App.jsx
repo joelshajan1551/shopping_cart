@@ -1,9 +1,22 @@
 import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { Navbar } from "./components/navbar";
+import { shop } from './pages/shopping/shop'
+import { cart } from './pages/cart/cart'
 
-export default function App() {
-  return (
-    <main>
-      joel
-    </main>
-  )
+function App() {
+  return <div className="App">
+
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<shop/>} />
+        <Route path="/cart" element={<cart/>} />
+      </Routes>
+    </Router>
+
+
+  </div>
 }
+
+export default App;
