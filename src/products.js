@@ -31,9 +31,9 @@ export const PRODUCTS = [
   },
   {
     id: 6,
-    productName: "vision pro",
-    price: "2,89,999",
-    productimg: "https://media.wired.com/photos/64810f543d9e6b1cb17a892b/4:3/w_1930,h_1448,c_limit/Apple-Vision-Pro-Might-Flop-Culture-1258467546.jpg",
+    productName: "apple 12w usb charger",
+    price: "1,799",
+    productimg: "https://rukminim2.flixcart.com/image/416/416/xif0q/battery-charger/i/6/t/-original-imagqe6zfbuqguyz.jpeg?q=70",
   },
   {
     id: 7,
