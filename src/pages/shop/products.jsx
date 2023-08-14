@@ -1,19 +1,20 @@
 import React from "react";
 import './shop.css'
+import {shopcontext} from '../../context/shop-context.jsx'
 
 export const Product = (props) => {
   const { id, productName, price, productimg } = props.data;
-  return(
+  return (
     <div className="product">
       <img src={productimg} />
       <div className="description">
         <p>
           <b>{productName}</b>
         </p>
-        <p> ${price} </p>
+        <p> ₹{price} </p>
       </div>
       <button className="addtocartbtn">Add To Cart</button>
-        
+
     </div>
   )
 };

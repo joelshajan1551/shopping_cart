@@ -5,7 +5,7 @@ import "./navbar.css";
 
 export const Navbar = () => {
   return (
-    <div className='navbar'>n
+    <div className='navbar'>
       <div className="links">
         <Link to="/"> shop </Link>
         <Link className="cartbtn" to="/cart" > cart
