@@ -3,15 +3,37 @@
   text-align: center;
   font-size: 30px;
 }
-.products {
+@media (max-width: 450px) {
+  .shoptitle{
+    font-size:15px;
+  }
+  .products {
+    width: 100%;
+    height:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    place-items: center;  
+
+  }
+  .product{
+    border-radius: 15px;
+  width:100%;
+  height:350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+}
+@media(min-width:450px){
+  .products {
   width: 100%;
   height:auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr ;
   place-items: center;  
 }
-
-.product {
+  .product {
   border-radius: 15px;
   width:100%;
   height:500px;
@@ -20,6 +42,9 @@
   justify-content: center;
   align-items: center;
 }
+}
+
+
 
 .product img {
   width: 65%;
