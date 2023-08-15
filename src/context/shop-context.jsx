@@ -14,6 +14,24 @@ const getdefaultcart = () => {
 export const Shopcontextprovider = (props) => {
   const [cartitems, setcartitem] = useState(getdefaultcart());
 
+  const gettotalcartamount = () => {
+    let totalamount = 0;
+    console.log(cartitems);
+    for (const item in cartitems) {
+      console.log(item);
+      if (cartitems[item] > 0) {
+        console.log("in if")
+        let iteminfo = PRODUCTS.find((product) => product.id === Number(item));
+        console.log("iteminfo", iteminfo)
+        let stringWithoutCommas = iteminfo.price.replace(/,/g, '');
+        let integerValue = parseInt(stringWithoutCommas);
+        totalamount += cartitems[item] * integerValue
+      }
+    }
+    console.log(totalamount);
+    return totalamount;
+  };
+
   const addtocart = (itemid) => {
 
     setcartitem((prev) => ({ ...prev, [itemid]: prev[itemid] + 1 }))
@@ -23,8 +41,17 @@ export const Shopcontextprovider = (props) => {
     setcartitem((prev) => ({ ...prev, [itemid]: prev[itemid] - 1 }))
   };
 
-  const contextValue = { cartitems, addtocart, removefromcart };
-  console.log(cartitems);
+  const updatecartitemcount = (newamount, itemid) => {
+    setcartitem((prev) => ({ ...prev, [itemid]: newamount }))
+  }
+
+  const contextValue = {
+    cartitems,
+    addtocart,
+    removefromcart,
+    updatecartitemcount,
+    gettotalcartamount,
+  };
 
 
   return (
