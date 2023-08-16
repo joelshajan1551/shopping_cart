@@ -2,8 +2,8 @@ export const PRODUCTS = [
   {
     id: 1,
     productName: "iphone",
-    price: 133999,
-    productimg:  "https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/i/h/c/-original-imaghxemmqyahnuj.jpeg?q=70",
+    price: "1,33,999",
+    productimg: "https://rukminim2.flixcart.com/image/416/416/xif0q/mobile/i/h/c/-original-imaghxemmqyahnuj.jpeg?q=70",
   },
   {
     id: 2,
