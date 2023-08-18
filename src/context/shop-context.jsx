@@ -20,9 +20,9 @@ export const Shopcontextprovider = (props) => {
     for (const item in cartitems) {
       console.log(item);
       if (cartitems[item] > 0) {
-        console.log("in if")
+
         let iteminfo = PRODUCTS.find((product) => product.id === Number(item));
-        console.log("iteminfo", iteminfo)
+
         let stringWithoutCommas = iteminfo.price.replace(/,/g, '');
         let integerValue = parseInt(stringWithoutCommas);
         totalamount += cartitems[item] * integerValue
@@ -33,8 +33,17 @@ export const Shopcontextprovider = (props) => {
   };
 
   const addtocart = (itemid) => {
+    setcartitem((prev) => {
+      // Check if the current item count is less than 12 before updating
+      if (prev[itemid] < 12) {
+        return { ...prev, [itemid]: prev[itemid] + 1 };
+      } else {
+        alert('maximum quantity reached')
 
-    setcartitem((prev) => ({ ...prev, [itemid]: prev[itemid] + 1 }))
+        return prev; // Don't update the state if the limit is reached
+      }
+    });
+
   };
 
   const removefromcart = (itemid) => {
